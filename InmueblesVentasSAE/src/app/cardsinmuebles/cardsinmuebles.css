@@ -1,0 +1,30 @@
+ .btn-custom-outline {
+        color: #6E1978;
+        border-color: #6E1978;
+    }
+
+    .btn-custom-outline:hover {
+        background-color: #6E1978;
+        color: white;
+    }
+
+    .div_image {
+        height: 300px;
+        /* background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat; */
+        background: round;
+        width: 100%;
+        min-width: 0;
+        object-fit: none;
+    }
+
+    .CARD {
+        border-radius: 5REM;
+    }
+
+
+
+.color-sae{
+     color: #6E1978;
+}

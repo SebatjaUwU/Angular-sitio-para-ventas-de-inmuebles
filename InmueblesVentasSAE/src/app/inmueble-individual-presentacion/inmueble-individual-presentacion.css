@@ -1,0 +1,56 @@
+   .carousel-inner>.carousel-item {
+       border-radius: 20px;
+       height: 350px;
+       background-size: contain;
+       background-position: center;
+       background-repeat: no-repeat;
+       width: 100%;
+   }
+
+   .carousel-control-prev-icon,
+   .carousel-control-next-icon {
+       background-color: black;
+       border-radius: 50%;
+       padding: 10px;
+   }
+
+   .carousel-indicators [data-bs-target] {
+       background-color: black;
+       width: 10px;
+       height: 10px;
+       border-radius: 50%;
+   }
+
+   .color {
+       color: #6e1978;
+   }
+
+   .whatsapp-banner {
+       background-color: #25D366;
+       color: white;
+       border-radius: 10px;
+       text-align: center;
+       width: 400px;
+       padding-bottom: 10px;
+       padding-top: 10px;
+       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   }
+
+   .whatsapp-btn {
+       background-color: white;
+       color: #25D366;
+       border: 2px solid white;
+       font-weight: bold;
+     
+   }
+
+   .whatsapp-btn:hover {
+       background-color: #1ebe5d;
+       color: white;
+       border: 2px solid white;
+   }
+
+   .whatsapp-icon {
+       font-size: 1.5rem;
+       margin-right: 8px;
+   }

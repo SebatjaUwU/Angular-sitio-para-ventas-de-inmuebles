@@ -1,0 +1,137 @@
+
+<style>
+  .carousel-inner>.item {
+    border-radius: 20px;
+    height: 300px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 350px;
+  }
+</style>
+
+
+<div class="container">
+  <div id="carouselExampleIndicators" class="carousel slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="Carrusel/banner comercial 360.png" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="Carrusel/FNA-05.png" class="d-block w-100" alt="...">
+      </div>
+
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <br>
+
+
+
+
+
+
+  <section>
+    <app-cardsinmuebles>
+
+    </app-cardsinmuebles>
+  </section>
+</div>
+
+<footer style="background-color: #6E1978;" class=" text-BLACK py-4">
+  <div class="container">
+    <div class="card rounded-4  border-0 text-BLACK p-4">
+      <div class="row">
+        <!-- Información general -->
+        <div class="col-md-4 mb-3">
+          <h5>Sociedad de Activos Especiales</h5>
+          <p><strong>Código postal:</strong> 110311</p>
+          <p><strong>Horario de atención:</strong> Lunes a Viernes de 8:00 a.m. - 5:00 p.m.</p>
+          <p><strong>Correspondencia:</strong> Lunes a Viernes de 8:00 a.m. - 4:00 p.m.</p>
+        </div>
+
+        <!-- Líneas de atención -->
+        <div class="col-md-4 mb-3">
+          <h5>Líneas de atención</h5>
+          <p><strong>Conmutador:</strong> +57 601 743 1444</p>
+          <p><strong>Correo institucional:</strong> atencionalciudadano&#64;saesas.gov.co</p>
+          <p><strong>Notificaciones judiciales:</strong> notificacionjuridica&#64;saesas.gov.co</p>
+          <p><strong>Redes:</strong><br>
+            ActivosSAE<br>
+            saesas1<br>
+            &#64;ActivosSAE (Twitter, Instagram, Facebook)
+          </p>
+        </div>
+
+        <!-- Sedes -->
+        <div class="col-md-4 mb-3">
+          <h5>Sedes</h5>
+          <p><strong>Sede principal:</strong><br>
+            Carrera 7 # 32-16, Centro Comercial San Martín Local 107, Bogotá D.C., Colombia<br>
+            Código postal: 110311
+          </p>
+          <p><strong>Territorial Occidente:</strong><br>
+            Cr. 43A No. 14 - 27 Of. 901, Medellín, Antioquia<br>
+            Código postal: 050021
+          </p>
+          <p><strong>Territorial Sur:</strong><br>
+            Cr. 3 No. 12 - 40 Piso 12, Cali, Valle del Cauca<br>
+            Código postal: 760042
+          </p>
+          <p><strong>Territorial Caribe:</strong><br>
+            Cr. 57 No.99A - 65 Piso 16, Barranquilla, Atlántico<br>
+            Código postal: 08000
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+
+<div id="multi-ranges-tooltips" data-mdb-tooltip="true"></div>
+
+<script>
+  const myCarousel = document.getElementById('carouselExampleIndicators')
+
+  myCarousel.addEventListener('slide.bs.carousel', event => {
+
+  })
+
+
+</script>
+<script>
+  const slider = document.getElementById('slider');
+  noUiSlider.create(slider, {
+    start: [20, 80],
+    connect: true,
+    range: {
+      'min': 0,
+      'max': 100
+    }
+  });
+
+  const rangeOutput = document.getElementById('rangeOutput');
+  slider.noUiSlider.on('update', function (values) {
+    rangeOutput.textContent = `${Math.round(values[0])} - ${Math.round(values[1])}`;
+  });
+</script>

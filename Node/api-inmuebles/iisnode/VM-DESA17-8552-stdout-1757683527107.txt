@@ -1,0 +1,2 @@
+🚀 Servidor corriendo en http://localhost:\\.\pipe\bcdd1e1b-fdbd-4c17-ad4f-3f451ea9a9c0
+✅ Conectado a SQL Server

@@ -1,0 +1,183 @@
+<div class="container mt-4">
+    <!-- Título -->
+    <h1 class="text-center mb-4 color">{{obtenerSubtipoInmueble(inmueble?.id_subtipo)}} {{inmueble?.folio_matricula}}</h1>
+ 
+    <!-- Carrusel + Contacto -->
+    <div class="row">
+        <!-- Carrusel -->
+        <div class="col-md-6 mx-auto " style="padding-top:60px;">
+            <div id="carouselInmueble" class="carousel slide " data-bs-ride="carousel">
+                <!-- Indicadores -->
+                <div class="carousel-indicators">
+                    <button *ngFor="let item of inmueble?.fotos, let i = index ;let isFirst = first" type="button"
+                        data-bs-target="#carouselInmueble" [attr.data-bs-slide]="i"
+                        [attr.aria-current]="isFirst ? 'true' : null " [attr.data-bs-slide-to]="i"
+                        [ngClass]="isFirst ? 'active' : null">
+                    </button>
+                </div>
+                <!-- {{inmueble?.fotos}} -->
+      <!-- <div [ngStyle]="{ 'background-image': 'url(http://localhost:3000/' + inmueble.fotos[0] + ')',   }" class="div_image"> </div> -->
+                <!-- Imágenes como fondo -->
+
+                <!-- <div [ngStyle]="{ 'background-image': 'url(' + this.baseUrl +'/' + inmueble.fotos[0] + ')',   }" class="div_image"> </div> -->
+                <div class="carousel-inner " style="height: 100%;">
+                    <div *ngFor="let item of inmueble?.fotos, let i = index ;let isFirst = first" class="carousel-item"
+                        [ngStyle]="{
+             'background-image': 'url('+ this.baseUrl + '/' + encodeFilenameParens(item) + ')',
+             'background-size': 'cover',
+             'background-position': 'center'
+           }" [ngClass]="isFirst  ? 'active' : null">
+                    </div>
+                </div>
+
+                <!-- Controles -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselInmueble"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselInmueble"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Contacto -->
+        <div class="col-md-6 " style="padding-top: 10px;">
+
+            <div style="text-align: right;">
+
+                <h5> <strong>Valor Base de Venta</strong></h5>
+                <h5> <strong style="color: #6e1978;">{{ formatearPrecio(inmueble?.precio) }}</strong></h5>
+
+            </div>
+
+            <div class="card">
+                <h5 class="text-center" style="padding-bottom: 10px;padding-top: 10px;"> <strong>{{obtenerSubtipoInmueble(inmueble?.id_subtipo)}}
+                        en venta , {{ formatearTitulo(obtenerNombreDepartamento(inmueble?.id_municipio))}}
+                        ,
+                        {{getNombreMunicipio(inmueble?.id_municipio)}}</strong></h5>
+
+                <h5 class="text-center" style="border-bottom: 1px  solid #6e1978; padding-bottom: 10px;">
+                    {{inmueble?.Direccion}}</h5>
+
+
+                <div class="row text-center">
+                    @if (inmueble?.area_terreno !== 0) {
+                    <div class="col-md-6 ">
+                        <h5 class="color">Área Terreno</h5>
+                        <img src="Icons/area.png" width="28px" height="28px" alt="">
+                   
+                            <h5  style="font-weight: normal;">     {{inmueble?.area_terreno}} mts² </h5>
+                    </div>
+                    }
+                    @if (inmueble?.area_construida !== 0) {
+                    <div class="col-md-6">
+                        <h5 class="color ">Área Construida</h5>
+                        <img src="Icons/Building.png" width="28px" height="28px" alt="">
+                        <h5  style="font-weight: normal;">{{inmueble?.area_construida}} mts² </h5>
+                    </div>
+                    }
+
+
+
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-6 ">
+                        <h5 class="color">Estado Ocupacion</h5>
+                        <h5  style="font-weight: normal;">{{ObtenerEstadoOcupacion(inmueble?.id_estado_ocupacion)}}</h5>
+                    </div>
+                    <div class="col-md-6">
+                        <h5 class="color">Territorial </h5>
+
+                        <h5  style="font-weight: normal;"> {{obtenerDireccionTerritorial(inmueble?.id_sucursal)}}</h5>
+
+                        
+                    </div>
+
+                </div>
+                <!-- <div class=" " style="display: flex
+;
+    justify-content: center;margin-top: 10px;margin-bottom: 10px;">
+                    <div>
+                        <div class="whatsapp-banner text-center">
+                            <h5>¿Está interesado? ¡Contáctenos!</h5>
+                            <a href="https://wa.me/573213137602" target="_blank" class="btn whatsapp-btn">
+                                <i class="bi bi-whatsapp whatsapp-icon"></i> Contactar por WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+
+
+
+
+
+
+
+
+            <!-- <h5>
+                    <table class="table table-bordered table-hover">
+                        <tbody>
+                            <tr>
+                                <th scope="row" class="color">Area Terreno</th>
+                                <td>100</td>
+
+                            </tr>
+                            <tr>
+                                <th scope="row">Area Construida </th>
+                                <td>100</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Direccion </th>
+                                <td>100</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Municipio </th>
+                                <td>Bogota D.C</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Estado ocupacion </th>
+                                <td>Ocupado</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Precio Valor Venta </th>
+                                <td>1.000.000$</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Sucursal </th>
+                                <td>Territorial Centro oriente </td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+                </h5> -->
+
+
+        </div>
+
+        <!-- xd -->
+    </div>
+
+    <!-- Descripción -->
+    <div class="mt-4">
+        <h5 class="color"><strong>Descripción del Inmueble</strong></h5>
+        <h5>{{inmueble?.descripcion}}</h5>
+        <h5><a [href]="inmueble?.link_comercializacion" target="_blank"> {{inmueble?.link_comercializacion}} </a></h5>
+    </div>
+</div>
+
+<div class="container" style="display: flex
+;
+    justify-content: right;margin-top: 10px;margin-bottom: 10px;">
+    <div>
+        <div class="whatsapp-banner text-center">
+            <h5>¿Está interesado? ¡Contáctenos!</h5>
+            <a href="https://wa.me/573213137602" target="_blank" class="btn whatsapp-btn">
+                <i class="bi bi-whatsapp whatsapp-icon"></i> Contactar por WhatsApp
+            </a>
+        </div>
+    </div>
+</div>
