@@ -1,10 +1,10 @@
 const sql = require('mssql');
 
 const config = {
-  user: 'Aplicativo_Desarrollo',
-  password: 'Saesas2017+',
-  server: 'DEVELOPSERVER\\DEVELOPSERVER', // Ej: 'localhost' o '192.168.1.100'
-  database: 'VentasSAE',
+  user: '',
+  password: '',
+  server: '', // Ej: 'localhost' o '192.168.1.100'
+  database: '',
   options: {
     encrypt: false, // true si usas Azure
     trustServerCertificate: true,
