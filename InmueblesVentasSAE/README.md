@@ -57,3 +57,12 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+
+
+## Configuration
+
+In `src/assets/config.json`:
+
+- `baseUrl`: The base API endpoint for Node backend (e.g., `http://localhost:3000/api`)
+- `localhost`: The host of the Node API (e.g., `http://localhost:3000`)
